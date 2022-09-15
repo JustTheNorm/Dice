@@ -15,13 +15,13 @@
 let playerDice;
 let computerDice;
 let winner;
-const array = [];
+// const array = [];
 
 const rollDice = () => {
   playerDice = Math.floor(Math.random() * 6);
   computerDice = Math.floor(Math.random() * 6);
-  array.push(playerDice);
-  array.push(computerDice);
+//   array.push(playerDice);
+//   array.push(computerDice);
   //   console.log(playerDice);
 //   console.log(computerDice);
 };
@@ -34,6 +34,8 @@ const rollDice = () => {
 // so there is a running record of game data.
 // Append the new div to the parent div on the HTML.
 const w = document.querySelector(`#w`);
+const play = document.querySelector(`#play-game`)
+const reset = document.querySelector(`#reset`)
 
 function displayScore() {
   const div = document.createElement(`div`);
@@ -42,12 +44,22 @@ function displayScore() {
   w.append(div);
 }
 
+function randomColor(element) {
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    console.log(bgColor);
+    element.style.backgroundColor = bgColor
+}
+
 // Create a Reset Function (resetGame)
 // REMOVE the div with the game score, leaving just the parent div
 // creating a clean slate for a new set of games :)
 function resetGame() {
   while (w.firstChild) {
     w.removeChild(w.firstChild);
+    randomColor(reset)
   }
 }
 
@@ -59,6 +71,7 @@ function playGame() {
 
   for (i = 0; i < 10; i++) {
     rollDice();
+    randomColor(play)
     if (playerDice > computerDice) {
       winner = `Player Wins!`;
       console.log("Player Wins!");
