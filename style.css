@@ -1,0 +1,22 @@
+.winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+}
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    align-content: center;
+    vertical-align: middle;
+}
+.scoreboard{
+    border-color: black;
+    border-style: double;
+    margin: 5px
+}
